@@ -13,22 +13,6 @@ public class QuadraticEquationOOP {
         double c = input.nextDouble();
 
         QuadraticEquation quadraticEquation = new QuadraticEquation(a,b,c);
-        double discriminant = quadraticEquation.getDiscriminant();
-        double r1 = quadraticEquation.getRoot1();
-        double r2 = quadraticEquation.getRoot2();
-
-        if (discriminant < 0)
-        {
-            System.out.println("The equation has no roots.");
-        }
-        else if (discriminant == 0)
-        {
-            System.out.println("The equation has one root is: " + r1);
-        }
-        else
-        {
-            System.out.println("The first root is: " + r1);
-            System.out.println("The second root is: "+ r2);
-        }
+        System.out.println(quadraticEquation);
     }
 }
