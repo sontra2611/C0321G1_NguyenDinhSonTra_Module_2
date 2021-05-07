@@ -36,7 +36,7 @@ public class QuadraticEquation {
         double r2 = (-b - Math.sqrt(Math.pow(b,2) - 4 * a * c)) / 2 * a;
         return r2;
     }
-    public String toString() {
+    public String solve() {
         if (getDiscriminant() < 0) {
             return "The equation has no roots.";
         } else if (getDiscriminant() == 0) {

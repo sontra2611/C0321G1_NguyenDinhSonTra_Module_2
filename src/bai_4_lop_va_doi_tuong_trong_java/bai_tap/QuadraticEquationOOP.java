@@ -13,6 +13,6 @@ public class QuadraticEquationOOP {
         double c = input.nextDouble();
 
         QuadraticEquation quadraticEquation = new QuadraticEquation(a,b,c);
-        System.out.println(quadraticEquation);
+        System.out.println(quadraticEquation.solve());
     }
 }

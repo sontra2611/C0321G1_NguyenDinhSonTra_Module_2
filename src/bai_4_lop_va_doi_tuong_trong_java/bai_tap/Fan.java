@@ -1,7 +1,9 @@
 package bai_4_lop_va_doi_tuong_trong_java.bai_tap;
 
 public class Fan {
-    final int slow = 1,medium = 2,fast=3;
+    final int slow = 1;
+    final int medium = 2;
+    final int fast = 3;
     private int speed = slow;
     private boolean on = false;
     private double radius = 5;
@@ -52,7 +54,7 @@ public class Fan {
        if (isOn() == true){
            return "Speed : " + speed +"\nColor : " + color + "\nRadius : " + radius + "\nfan is on";
        }else {
-           return "fan is off";
+           return "fan is off" + "\nSpeed : " + speed +"\nColor : " + color + "\nRadius : " + radius + "\nfan is on";
        }
     }
 }
