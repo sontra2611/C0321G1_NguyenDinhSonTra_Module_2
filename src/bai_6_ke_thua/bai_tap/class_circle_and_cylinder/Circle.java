@@ -1,11 +1,10 @@
-package bai_6_ke_thua.bai_tap;
+package bai_6_ke_thua.bai_tap.class_circle_and_cylinder;
 
 public class Circle {
-    private double radius;
-    private String color;
+    private double radius = 1;
+    private String color = "white";
 
     public Circle(){
-
     }
 
     public Circle(double radius, String color) {
@@ -37,8 +36,9 @@ public class Circle {
     public String toString() {
         return "A Circle with color "
                 + color
-                + "and radius = "
-                + radius;
+                + " and radius = "
+                + radius
+                + " and Area = "
+                + getArea();
     }
 }
-

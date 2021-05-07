@@ -20,7 +20,7 @@ public class Fan {
         return speed;
     }
 
-    public boolean on(){
+    public boolean isOn(){
         return on;
     }
 
@@ -49,7 +49,7 @@ public class Fan {
     }
 
     public String toString(){
-       if (on == true){
+       if (isOn() == true){
            return "Speed : " + speed +"\nColor : " + color + "\nRadius : " + radius + "\nfan is on";
        }else {
            return "fan is off";
