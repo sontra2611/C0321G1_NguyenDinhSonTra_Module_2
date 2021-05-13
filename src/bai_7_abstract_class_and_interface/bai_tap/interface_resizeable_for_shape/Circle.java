@@ -1,6 +1,6 @@
 package bai_7_abstract_class_and_interface.bai_tap.interface_resizeable_for_shape;
 
-public class Circle extends Shape{
+public class Circle extends Shape {
     private double radius = 1.0;
 
     public Circle() {
@@ -38,11 +38,11 @@ public class Circle extends Shape{
                 + ", which is a subclass of "
                 + super.toString()
                 + ", Area= " +
-                + getArea();
+                +getArea();
     }
 
     @Override
     public void resize(double percent) {
-        this.radius *= percent;
+        this.setRadius(this.getRadius() * Math.sqrt(1 + percent / 100));
     }
 }

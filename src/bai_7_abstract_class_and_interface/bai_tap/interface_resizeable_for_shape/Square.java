@@ -11,7 +11,7 @@ public class Square extends Shape {
     }
 
     public Square(double side, String color, boolean filled) {
-        super(color,filled);
+        super(color, filled);
         this.side = side;
     }
 
@@ -30,7 +30,7 @@ public class Square extends Shape {
                 + ", which is a subclass of "
                 + super.toString()
                 + ", Area = " +
-                + getArea();
+                +getArea();
     }
 
     double getArea() {
@@ -39,7 +39,6 @@ public class Square extends Shape {
 
     @Override
     public void resize(double percent) {
-        this.side *= percent;
+        this.setSide(this.getSide() * Math.sqrt(1 + percent / 100));
     }
-
 }
