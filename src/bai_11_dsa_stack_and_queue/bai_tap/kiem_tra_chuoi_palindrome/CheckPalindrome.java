@@ -22,12 +22,13 @@ public class CheckPalindrome {
                 flag = true;
             } else {
                 flag = false;
+                break;
             }
         }
 
         if (flag) {
             System.out.println("Chuoi " + str + " là chuoi doi xung");
-        } else System.out.println("Khong doi xung");
+        } else System.out.println("Chuoi " + str + " la chuoi khong doi xung");
     }
 
     public static void main(String[] args) {
