@@ -1,8 +1,6 @@
 package bai_11_dsa_stack_and_queue.bai_tap.to_chuc_du_lieu_hop_ly;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Queue;
+import java.util.*;
 
 public class Demergin {
     public static void main(String[] args) {
@@ -12,6 +10,9 @@ public class Demergin {
         list.add(new Student("Thuy","nu","1996"));
         list.add(new Student("Phap","nam","1999"));
         list.add(new Student("Dung","nam","1998"));
+
+        Collections.sort(list);
+        
         Queue<Student> nu = new ArrayDeque<>();
         Queue<Student> nam = new ArrayDeque<>();
         for (Student student : list) {
