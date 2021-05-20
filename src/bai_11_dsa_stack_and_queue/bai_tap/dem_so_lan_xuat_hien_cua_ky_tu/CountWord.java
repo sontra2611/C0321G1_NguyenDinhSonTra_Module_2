@@ -1,18 +1,18 @@
 package bai_11_dsa_stack_and_queue.bai_tap.dem_so_lan_xuat_hien_cua_ky_tu;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
 public class CountWord {
     private static void countingWord(String str) {
-        String[] string = str.split(" ");
+        String[] string = str.trim().split("\\s+");
+        System.out.println(Arrays.toString(string));
         Map<String, Integer> map = new TreeMap<>();
         for (String key : string) {
             key = key.toLowerCase();
-            if (key.equals("")) {
-                continue;
-            } else if (map.containsKey(key)) {
+            if (map.containsKey(key)) {
                 int value = map.get(key) + 1;
                 map.put(key, value);
             } else {

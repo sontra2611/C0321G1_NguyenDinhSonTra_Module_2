@@ -18,9 +18,7 @@ public class CheckPalindrome {
 
         int length = stack.size();
         for (int i = 0; i < length; i++) {
-            if (stack.pop().equals(queue.poll())) {
-                flag = true;
-            } else {
+            if (!stack.pop().equals(queue.poll())) {
                 flag = false;
                 break;
             }

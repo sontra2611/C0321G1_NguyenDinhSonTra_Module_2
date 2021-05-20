@@ -70,7 +70,7 @@ public class ProductManager {
 
     private static void searchProduct(ArrayList<Product> listProduct, Scanner input) {
         System.out.println("Nhập tên sản phẩm bạn muốn tìm kiếm");
-        String name = input.next();
+        String name = input.nextLine();
         boolean flag = false;
         for (Product p : listProduct) {
             if (name.equals(p.getNameProduct())) {
@@ -102,12 +102,13 @@ public class ProductManager {
                     listProduct.get(id - 1).setId(editId);
                     break;
                 case 2:
+                    input.nextLine();
                     System.out.println("Nhập tên bạn muốn thay đổi :");
-                    String name = input.next();
+                    String name = input.nextLine();
                     listProduct.get(id - 1).setNameProduct(name);
                     break;
                 case 3:
-                    System.out.println("Nhập tên bạn muốn thay đổi :");
+                    System.out.println("Nhập giá bạn muốn thay đổi :");
                     int price = input.nextInt();
                     listProduct.get(id - 1).setPrice(price);
                     break;
@@ -150,8 +151,9 @@ public class ProductManager {
     private static void addProduct(ArrayList<Product> listProduct, Scanner input) {
         System.out.println("Nhập Id :");
         int id = input.nextInt();
+        input.nextLine();
         System.out.println("Nhập tên sản phẩm");
-        String name = input.next();
+        String name = input.nextLine();
         System.out.println("Nhập giá");
         int price = input.nextInt();
         Product product5 = new Product(id, name, price);
