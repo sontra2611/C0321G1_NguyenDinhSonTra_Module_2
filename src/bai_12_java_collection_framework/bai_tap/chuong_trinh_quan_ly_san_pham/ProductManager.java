@@ -68,22 +68,56 @@ public class ProductManager {
         }
     }
 
-    private static void searchProduct(ArrayList<Product> listProduct, Scanner input) {
-        System.out.println("Nhập tên sản phẩm bạn muốn tìm kiếm");
-        String name = input.nextLine();
-        boolean flag = false;
+    private static void displayListProduct(ArrayList<Product> listProduct) {
+        System.out.print("----------------");
+        System.out.println();
+        System.out.println("Danh sách sản phẩm :");
         for (Product p : listProduct) {
-            if (name.equals(p.getNameProduct())) {
-                flag = true;
-                System.out.println(p);
-                break;
-            } else {
-                flag = false;
+            System.out.println(p);
+        }
+        System.out.print("----------------");
+        System.out.println();
+    }
+
+    private static void addProduct(ArrayList<Product> listProduct, Scanner input) {
+        System.out.println("Nhập Id :");
+        int id = input.nextInt();
+        input.nextLine();
+        System.out.println("Nhập tên sản phẩm");
+        String name = input.nextLine();
+        System.out.println("Nhập giá");
+        int price = input.nextInt();
+        Product product5 = new Product(id, name, price);
+        listProduct.add(product5);
+        displayListProduct(listProduct);
+    }
+
+    private static void deleteProduct(ArrayList<Product> listProduct, Scanner input) {
+        System.out.println("Nhập Id sản phẩm bạn muốn xoá : ");
+        int id = input.nextInt();
+        listProduct.remove(id - 1);
+        displayListProduct(listProduct);
+    }
+
+    private static int checkIdEditProduct(ArrayList<Product> listProduct, Scanner input) {
+        boolean flag = false;
+        int id = 0;
+        while (!flag) {
+            System.out.println("Nhập Id sản phẩm bạn muốn sửa : ");
+            id = input.nextInt();
+            for (Product p : listProduct) {
+                if (id != p.getId()) {
+                    flag = false;
+                } else {
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag) {
+                System.out.println("Id sản phẩm k tồn tại, vui lòng nhập lại");
             }
         }
-        if (!flag) {
-            System.out.println("Sản phẩm k có trog danh sách");
-        }
+        return id;
     }
 
     private static void editProduct(ArrayList<Product> listProduct, Scanner input, int id) {
@@ -120,55 +154,21 @@ public class ProductManager {
         }
     }
 
-    private static int checkIdEditProduct(ArrayList<Product> listProduct, Scanner input) {
-        boolean flag = false;
-        int id = 0;
-        while (!flag) {
-            System.out.println("Nhập Id sản phẩm bạn muốn sửa : ");
-            id = input.nextInt();
-            for (Product p : listProduct) {
-                if (id != p.getId()) {
-                    flag = false;
-                } else {
-                    flag = true;
-                    break;
-                }
-            }
-            if (!flag) {
-                System.out.println("Id sản phẩm k tồn tại, vui lòng nhập lại");
-            }
-        }
-        return id;
-    }
-
-    private static void deleteProduct(ArrayList<Product> listProduct, Scanner input) {
-        System.out.println("Nhập Id sản phẩm bạn muốn xoá : ");
-        int id = input.nextInt();
-        listProduct.remove(id - 1);
-        displayListProduct(listProduct);
-    }
-
-    private static void addProduct(ArrayList<Product> listProduct, Scanner input) {
-        System.out.println("Nhập Id :");
-        int id = input.nextInt();
-        input.nextLine();
-        System.out.println("Nhập tên sản phẩm");
+    private static void searchProduct(ArrayList<Product> listProduct, Scanner input) {
+        System.out.println("Nhập tên sản phẩm bạn muốn tìm kiếm");
         String name = input.nextLine();
-        System.out.println("Nhập giá");
-        int price = input.nextInt();
-        Product product5 = new Product(id, name, price);
-        listProduct.add(product5);
-        displayListProduct(listProduct);
-    }
-
-    private static void displayListProduct(ArrayList<Product> listProduct) {
-        System.out.print("----------------");
-        System.out.println();
-        System.out.println("Danh sách sản phẩm :");
+        boolean flag = false;
         for (Product p : listProduct) {
-            System.out.println(p);
+            if (name.equals(p.getNameProduct())) {
+                flag = true;
+                System.out.println(p);
+                break;
+            } else {
+                flag = false;
+            }
         }
-        System.out.print("----------------");
-        System.out.println();
+        if (!flag) {
+            System.out.println("Sản phẩm k có trog danh sách");
+        }
     }
 }
