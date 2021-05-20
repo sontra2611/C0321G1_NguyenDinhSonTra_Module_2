@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class FindMaxSubSequence {
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
@@ -27,6 +26,7 @@ public class FindMaxSubSequence {
             }
             list.clear();
         }
+
         for (Character ch : max) {
             System.out.print(ch);
         }
