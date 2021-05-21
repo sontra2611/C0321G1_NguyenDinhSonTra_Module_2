@@ -1,74 +1,10 @@
 package bai_12_java_collection_framework.bai_tap.chuong_trinh_quan_ly_san_pham;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class ProductManager {
-    public static void main(String[] args) {
-        ArrayList<Product> listProduct = new ArrayList<>();
-        Product product1 = new Product(1, "Samsung", 10000000);
-        Product product2 = new Product(2, "Iphone", 20000000);
-        Product product3 = new Product(3, "Nokia", 3000000);
-        Product product4 = new Product(4, "Oppo", 7000000);
-
-        listProduct.add(product1);
-        listProduct.add(product2);
-        listProduct.add(product3);
-        listProduct.add(product4);
-
-        int choice = -1;
-        while (choice != 0) {
-            Scanner input = new Scanner(System.in);
-            System.out.println("Quản lý sản phẩm : ");
-            System.out.println("1.Hiển thị danh sách sản phẩm : ");
-            System.out.println("2.Thêm sản phẩm : ");
-            System.out.println("3.Xoá sản phẩm : ");
-            System.out.println("4.Sủa thông tin sản phẩm : ");
-            System.out.println("5.Tìm kiếm sản phẩm : ");
-            System.out.println("6.Sắp xếp sản phẩm tăng dần theo giá : ");
-            System.out.println("7.Sắp xếp sản phẩm giảm dần theo giá : ");
-            System.out.println("8.Hiển thị danh sách và thoát menu : ");
-
-            choice = input.nextInt();
-
-            switch (choice) {
-                case 1:
-                    displayListProduct(listProduct);
-                    break;
-                case 2:
-                    addProduct(listProduct, input);
-                    break;
-                case 3:
-                    deleteProduct(listProduct, input);
-                    break;
-                case 4:
-                    int id = checkIdEditProduct(listProduct, input);
-                    editProduct(listProduct, input, id);
-                    break;
-                case 5:
-                    searchProduct(listProduct, input);
-                    break;
-                case 6:
-                    Collections.sort(listProduct, new Product());
-                    displayListProduct(listProduct);
-                    break;
-                case 7:
-                    Collections.sort(listProduct, new ComparatorByPrice());
-                    displayListProduct(listProduct);
-                    break;
-                case 8:
-                    displayListProduct(listProduct);
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Không có lựa chọn này");
-            }
-        }
-    }
-
-    private static void displayListProduct(ArrayList<Product> listProduct) {
+    public static void displayListProduct(ArrayList<Product> listProduct) {
         System.out.print("----------------");
         System.out.println();
         System.out.println("Danh sách sản phẩm :");
@@ -79,7 +15,7 @@ public class ProductManager {
         System.out.println();
     }
 
-    private static void addProduct(ArrayList<Product> listProduct, Scanner input) {
+    public static void addProduct(ArrayList<Product> listProduct, Scanner input) {
         System.out.println("Nhập Id :");
         int id = input.nextInt();
         input.nextLine();
@@ -92,14 +28,21 @@ public class ProductManager {
         displayListProduct(listProduct);
     }
 
-    private static void deleteProduct(ArrayList<Product> listProduct, Scanner input) {
+    public static void deleteProduct(ArrayList<Product> listProduct, Scanner input) {
         System.out.println("Nhập Id sản phẩm bạn muốn xoá : ");
         int id = input.nextInt();
-        listProduct.remove(id - 1);
+        System.out.println("Bạn có chắc chắn muốn xoá ?");
+        System.out.println("1.có \n2.không");
+        int option = input.nextInt();
+        if (option == 1) {
+            listProduct.remove(id - 1);
+        }else {
+            System.out.println("Xoá không thành công");
+        }
         displayListProduct(listProduct);
     }
 
-    private static int checkIdEditProduct(ArrayList<Product> listProduct, Scanner input) {
+    public static int checkIdEditProduct(ArrayList<Product> listProduct, Scanner input) {
         boolean flag = false;
         int id = 0;
         while (!flag) {
@@ -120,7 +63,7 @@ public class ProductManager {
         return id;
     }
 
-    private static void editProduct(ArrayList<Product> listProduct, Scanner input, int id) {
+    public static void editProduct(ArrayList<Product> listProduct, Scanner input, int id) {
         boolean check = true;
         while (check) {
             System.out.println("Chọn thông tin bạn muốn sửa : ");
@@ -154,7 +97,7 @@ public class ProductManager {
         }
     }
 
-    private static void searchProduct(ArrayList<Product> listProduct, Scanner input) {
+    public static void searchProduct(ArrayList<Product> listProduct, Scanner input) {
         System.out.println("Nhập tên sản phẩm bạn muốn tìm kiếm");
         String name = input.nextLine();
         boolean flag = false;
