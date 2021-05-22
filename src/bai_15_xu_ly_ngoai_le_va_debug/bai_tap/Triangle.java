@@ -3,11 +3,11 @@ package bai_15_xu_ly_ngoai_le_va_debug.bai_tap;
 import java.util.Scanner;
 
 public class Triangle {
-    private int size1;
-    private int size2;
-    private int size3;
+    private double size1;
+    private double size2;
+    private double size3;
 
-    public Triangle(int size1, int size2, int size3) throws IllegalTriangleException{
+    public Triangle(double size1, double size2, double size3) throws IllegalTriangleException{
         if(size1+size2<size3 || size1+size3<size2 || size2+size3<size1 || size1 < 0 || size2 <0 || size3 < 0)
             throw new IllegalTriangleException("Đây không phải tam giác");
         else{
