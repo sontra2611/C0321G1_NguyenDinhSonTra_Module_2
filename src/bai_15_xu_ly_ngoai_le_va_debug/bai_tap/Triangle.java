@@ -41,7 +41,7 @@ public class Triangle {
             System.out.println(triangle.toString());
         }
         catch (IllegalTriangleException e){
-            System.out.println(e.getErrorMessage());
+            System.out.println(e);
         }
     }
 }
