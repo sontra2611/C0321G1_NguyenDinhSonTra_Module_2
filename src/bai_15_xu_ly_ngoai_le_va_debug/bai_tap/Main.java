@@ -18,13 +18,13 @@ public class Main {
                 Triangle triangle = new Triangle(size1, size2, size3);
                 System.out.println(triangle.toString());
                 check = false;
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.err.println("Bạn nhập không hợp lệ, vui lòng nhập số");
-                check =true;
-            }catch (IllegalTriangleException e) {
+                check = true;
+            } catch (IllegalTriangleException e) {
                 System.err.println(e);
                 check = true;
             }
-        }while (check);
+        } while (check);
     }
 }
