@@ -1,4 +1,4 @@
-package bai_16_io_text_file.thuc_hanh;
+package bai_16_io_text_file.thuc_hanh.tinh_tong_cac_so_trong_file;
 
 import java.io.*;
 import java.util.Scanner;
