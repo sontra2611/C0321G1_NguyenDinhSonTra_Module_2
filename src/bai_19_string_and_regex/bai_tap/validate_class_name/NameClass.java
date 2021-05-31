@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class NameClass {
-    private static final String CLASS_NAME_REGEX = "^[C A P]+[0-9]{4}[G H I K L M]+$";
+    private static final String CLASS_NAME_REGEX = "^[CAP][0-9]{4}[GHIKLM]$";
 
     public NameClass() {
     }
