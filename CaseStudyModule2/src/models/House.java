@@ -1,26 +1,23 @@
 package models;
 
-public class Villa extends Service {
+public class House extends Service {
     private String roomStandard;
     private String otherAmenities;
-    private String swimmingPoolArea;
     private String numberFloors;
 
-    public Villa() {
+    public House() {
     }
 
-    public Villa(String roomStandard, String otherAmenities, String swimmingPoolArea, String numberFloors) {
+    public House(String roomStandard, String describe, String numberFloors) {
         this.roomStandard = roomStandard;
-        this.otherAmenities = otherAmenities;
-        this.swimmingPoolArea = swimmingPoolArea;
+        this.otherAmenities = describe;
         this.numberFloors = numberFloors;
     }
 
-    public Villa(String id, String serviceName, String area, String rentalCost, String maxPeople, String rentalType, String roomStandard, String describe, String swimmingPoolArea, String numberFloors) {
+    public House(String id, String serviceName, String area, String rentalCost, String maxPeople, String rentalType, String roomStandard, String otherAmenities, String numberFloors) {
         super(id, serviceName, area, rentalCost, maxPeople, rentalType);
         this.roomStandard = roomStandard;
-        this.otherAmenities = describe;
-        this.swimmingPoolArea = swimmingPoolArea;
+        this.otherAmenities = otherAmenities;
         this.numberFloors = numberFloors;
     }
 
@@ -40,14 +37,6 @@ public class Villa extends Service {
         this.otherAmenities = otherAmenities;
     }
 
-    public String getSwimmingPoolArea() {
-        return swimmingPoolArea;
-    }
-
-    public void setSwimmingPoolArea(String swimmingPoolArea) {
-        this.swimmingPoolArea = swimmingPoolArea;
-    }
-
     public String getNumberFloors() {
         return numberFloors;
     }
@@ -61,17 +50,15 @@ public class Villa extends Service {
         return super.splitString() +
                 "," + roomStandard +
                 "," + otherAmenities +
-                "," + swimmingPoolArea +
                 "," + numberFloors;
     }
 
     @Override
     public String showInfor() {
-        return "Villa { " +
+        return "House { " +
                 super.showInfor() +
                 ", Tiêu Chuẩn Phòng = '" + roomStandard + '\'' +
                 ", Tiện Nghi Khác = '" + otherAmenities + '\'' +
-                ", Diện Tích Hồ Bơi = '" + swimmingPoolArea + '\'' +
                 ", Số Tầng = '" + numberFloors + '\'' +
                 '}';
     }
