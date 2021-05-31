@@ -52,8 +52,8 @@ public class Controllers {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Menu : ");
             System.out.println("1.Add New Villa\n" +
-                    "2.Add New Room\n" +
-                    "3.Add New House\n" +
+                    "2.Add New House\n" +
+                    "3.Add New Room\n" +
                     "4.Exit");
             int choice = scanner.nextInt();
 
@@ -62,10 +62,10 @@ public class Controllers {
                     managerService.addVilla();
                     break;
                 case 2:
-                    managerService.addRoom();
+                    managerService.addHouse();
                     break;
                 case 3:
-                    managerService.addHouse();
+                    managerService.addRoom();
                     break;
                 case 4:
                     check = false;
@@ -81,23 +81,32 @@ public class Controllers {
         do {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Menu : ");
-            System.out.println("1.Show Villa\n" +
-                    "2.Show Room\n" +
-                    "3.Show House\n" +
-                    "4.Exit");
+            System.out.println("1.Show All Villa\n" +
+                    "2.Show All House\n" +
+                    "3.Show All Room\n" +
+                    "4.Show All Name Villa Not Duplicate\n" +
+                    "5.Show All Name House Not Duplicate\n" +
+                    "6.Show All Name Room Not Duplicate\n" +
+                    "7.Exit");
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
-                    managerService.displayVilla();
+                    managerService.displayAllVilla();
                     break;
                 case 2:
-                    managerService.displayRoom();
+                    managerService.displayAllHouse();
                     break;
                 case 3:
-                    managerService.displayHouse();
+                    managerService.displayAllRoom();
                     break;
                 case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
                     check = false;
                     break;
                 default:

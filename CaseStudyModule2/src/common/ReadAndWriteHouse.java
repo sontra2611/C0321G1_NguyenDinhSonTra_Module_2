@@ -1,7 +1,6 @@
 package common;
 
 import models.House;
-import models.Room;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -17,7 +16,7 @@ public class ReadAndWriteHouse {
             bufferedReader = new BufferedReader(fileReader);
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                String[] strings = line.split(",");
+                String[] strings = line.split("#");
                 House house = new House(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6],strings[7],strings[8]);
                 houseList.add(house);
             }
@@ -40,7 +39,7 @@ public class ReadAndWriteHouse {
             fileWriter = new FileWriter("D:\\C0321G1_NguyenDinhSonTra_Module_2\\CaseStudyModule2\\src\\data\\room.csv", true);
             bufferedWriter = new BufferedWriter(fileWriter);
             for (House house : houseList) {
-                bufferedWriter.write(house.splitString());
+                bufferedWriter.write(house.toString());
                 bufferedWriter.newLine();
             }
         } catch (Exception e) {

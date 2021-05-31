@@ -68,13 +68,13 @@ public abstract class Service {
         this.rentalType = rentalType;
     }
 
-    public String splitString(){
+    public String toString(){
         return  id+
-                ","+ serviceName +
-                "," + area +
-                "," + rentalCost +
-                "," + maxPeople +
-                "," + rentalType ;
+                "#"+ serviceName +
+                "#" + area +
+                "#" + rentalCost +
+                "#" + maxPeople +
+                "#" + rentalType ;
     }
 
     public String showInfor() {

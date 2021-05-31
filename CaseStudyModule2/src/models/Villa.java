@@ -57,12 +57,12 @@ public class Villa extends Service {
     }
 
     @Override
-    public String splitString() {
-        return super.splitString() +
-                "," + roomStandard +
-                "," + otherAmenities +
-                "," + swimmingPoolArea +
-                "," + numberFloors;
+    public String toString() {
+        return super.toString() +
+                "#" + roomStandard +
+                "#" + otherAmenities +
+                "#" + swimmingPoolArea +
+                "#" + numberFloors;
     }
 
     @Override

@@ -24,9 +24,9 @@ public class Room extends Service {
     }
 
     @Override
-    public String splitString() {
-        return super.splitString() +
-                "," + freeService;
+    public String toString() {
+        return super.toString() +
+                "#" + freeService;
 
     }
 

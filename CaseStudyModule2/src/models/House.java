@@ -46,11 +46,11 @@ public class House extends Service {
     }
 
     @Override
-    public String splitString() {
-        return super.splitString() +
-                "," + roomStandard +
-                "," + otherAmenities +
-                "," + numberFloors;
+    public String toString() {
+        return super.toString() +
+                "#" + roomStandard +
+                "#" + otherAmenities +
+                "#" + numberFloors;
     }
 
     @Override
