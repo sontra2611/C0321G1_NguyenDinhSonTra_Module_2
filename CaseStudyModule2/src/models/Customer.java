@@ -1,6 +1,6 @@
 package models;
 
-public class Cutomer {
+public class Customer {
     private String name;
     private String birthday;
     private String gender;
@@ -9,12 +9,12 @@ public class Cutomer {
     private String email;
     private String customerType;
     private String address;
-    private Service service;
+    private String service;
 
-    public Cutomer() {
+    public Customer() {
     }
 
-    public Cutomer(String name, String birthday, String gender, String numberIDCard, String phoneNumbers, String email, String customerType, String address, Service service) {
+    public Customer(String name, String birthday, String gender, String numberIDCard, String phoneNumbers, String email, String customerType, String address, String service) {
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;
@@ -90,11 +90,11 @@ public class Cutomer {
         this.address = address;
     }
 
-    public Service getService() {
+    public String getService() {
         return service;
     }
 
-    public void setService(Service service) {
+    public void setService(String service) {
         this.service = service;
     }
 
