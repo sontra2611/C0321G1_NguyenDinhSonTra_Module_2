@@ -6,14 +6,12 @@ import common.ReadAndWriteVilla;
 import models.House;
 import models.Room;
 import models.Villa;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class ManagerService {
-//    public void checkIDVilla(String id) throws CheckInput {
-//
-//    }
     public void addVilla() {
         ReadAndWriteVilla readAndWriteVilla = new ReadAndWriteVilla();
         List<Villa> villaList = new ArrayList<>();
@@ -21,26 +19,29 @@ public class ManagerService {
 
         String id = CheckInput.checkIDVilla(scanner);
 
-        System.out.println("Nhập tên dịch vụ");
-        String nameService = scanner.nextLine();
+        String nameService = CheckInput.checkNameService(scanner);
+
         System.out.println("Nhập diện tích sử dụng");
-        String area = scanner.nextLine();
-        System.out.println("Nhập giá cho thuê :");
-        String rentalCost = scanner.nextLine();
-        System.out.println("Nhập số lượng người tối đa :");
-        String maxPeople = scanner.nextLine();
-        System.out.println("Nhập kiểu thuê : ");
-        String rentalType = scanner.nextLine();
-        System.out.println("Nhập tiêu chuẩn phòng :");
-        String roomStandard = scanner.nextLine();
+        String area = CheckInput.checkArea(scanner);
+
+
+        String rentalCost = CheckInput.checkRentalCost(scanner);
+
+        String maxPeople = CheckInput.checkMaxPeople(scanner);
+
+        String rentalType = CheckInput.checkRentalType(scanner);
+
+        String roomStandard = CheckInput.checkRoomStandard(scanner);
+
         System.out.println("Nhập mô tả tiện nghi khác ");
         String otherAmenities = scanner.nextLine();
-        System.out.println("Nhập diện tích hồ bơi : ");
-        String swimmingPoolArea = scanner.nextLine();
-        System.out.println("Nhập số tầng : ");
-        String numberFloors = scanner.nextLine();
 
-        Villa villa = new Villa(id,nameService,area,rentalCost,maxPeople,rentalType,roomStandard,otherAmenities,swimmingPoolArea,numberFloors);
+        System.out.println("Nhập diện tích hồ bơi : ");
+        String swimmingPoolArea = CheckInput.checkArea(scanner);
+
+        String numberFloors = CheckInput.checkNumberFloors(scanner);
+
+        Villa villa = new Villa(id, nameService, area, rentalCost, maxPeople, rentalType, roomStandard, otherAmenities, swimmingPoolArea, numberFloors);
         villaList.add(villa);
         readAndWriteVilla.writeFile(villaList);
     }
@@ -49,26 +50,27 @@ public class ManagerService {
         ReadAndWriteHouse readAndWriteHouse = new ReadAndWriteHouse();
         List<House> houseList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập ID :");
-        String id = scanner.nextLine();
-        System.out.println("Nhập tên dịch vụ");
-        String nameService = scanner.nextLine();
-        System.out.println("Nhập diện tích sử dụng");
+
+        String id = CheckInput.checkIDHouse(scanner);
+
+        String nameService = CheckInput.checkNameService(scanner);
+
         String area = scanner.nextLine();
-        System.out.println("Nhập giá cho thuê :");
-        String rentalCost = scanner.nextLine();
-        System.out.println("Nhập số lượng người tối đa :");
-        String maxPeople = scanner.nextLine();
-        System.out.println("Nhập kiểu thuê : ");
-        String rentalType = scanner.nextLine();
-        System.out.println("Nhập tiêu chuẩn phòng :");
-        String roomStandard = scanner.nextLine();
+
+        String rentalCost = CheckInput.checkRentalCost(scanner);
+
+        String maxPeople = CheckInput.checkMaxPeople(scanner);
+
+        String rentalType = CheckInput.checkRentalType(scanner);
+
+        String roomStandard = CheckInput.checkRoomStandard(scanner);
+
         System.out.println("Nhập mô tả tiện nghi khác ");
         String otherAmenities = scanner.nextLine();
-        System.out.println("Nhập số tầng : ");
-        String numberFloors = scanner.nextLine();
 
-        House house = new House(id,nameService,area,rentalCost,maxPeople,rentalType,roomStandard,otherAmenities,numberFloors);
+        String numberFloors = CheckInput.checkNumberFloors(scanner);
+
+        House house = new House(id, nameService, area, rentalCost, maxPeople, rentalType, roomStandard, otherAmenities, numberFloors);
         houseList.add(house);
         readAndWriteHouse.writeFile(houseList);
     }
@@ -77,28 +79,29 @@ public class ManagerService {
         ReadAndWriteRoom readAndWriteRoom = new ReadAndWriteRoom();
         List<Room> roomList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập ID :");
-        String id = scanner.nextLine();
-        System.out.println("Nhập tên dịch vụ");
-        String nameService = scanner.nextLine();
-        System.out.println("Nhập diện tích sử dụng");
-        String area = scanner.nextLine();
-        System.out.println("Nhập giá cho thuê :");
-        String rentalCost = scanner.nextLine();
-        System.out.println("Nhập số lượng người tối đa :");
-        String maxPeople = scanner.nextLine();
-        System.out.println("Nhập kiểu thuê : ");
-        String rentalType = scanner.nextLine();
-        System.out.println("Nhập dịch vụ miễn phí đi kèm:");
-        String freeService = scanner.nextLine();
 
-        Room room = new Room(id,nameService,area,rentalCost,maxPeople,rentalType,freeService);
+        String id = CheckInput.checkIDRoom(scanner);
+
+        String nameService = CheckInput.checkNameService(scanner);
+
+        System.out.println("Nhập diện tích sử dụng");
+        String area = CheckInput.checkArea(scanner);
+
+        String rentalCost = CheckInput.checkRentalCost(scanner);
+
+        String maxPeople = CheckInput.checkMaxPeople(scanner);
+
+        String rentalType = CheckInput.checkRentalType(scanner);
+
+        String freeService = CheckInput.checkFreeService(scanner);
+
+        Room room = new Room(id, nameService, area, rentalCost, maxPeople, rentalType, freeService);
         roomList.add(room);
         readAndWriteRoom.writeFile(roomList);
     }
 
 
-    public void displayAllVilla(){
+    public void displayAllVilla() {
         ReadAndWriteVilla readAndWriteVilla = new ReadAndWriteVilla();
         List<Villa> villaList = readAndWriteVilla.readFile();
         for (Villa villa : villaList) {
@@ -106,7 +109,7 @@ public class ManagerService {
         }
     }
 
-    public void displayAllHouse(){
+    public void displayAllHouse() {
         ReadAndWriteHouse readAndWriteHouse = new ReadAndWriteHouse();
         List<House> houseList = readAndWriteHouse.readFile();
         for (House house : houseList) {
@@ -114,7 +117,7 @@ public class ManagerService {
         }
     }
 
-    public void displayAllRoom(){
+    public void displayAllRoom() {
         ReadAndWriteRoom readAndWriteRoom = new ReadAndWriteRoom();
         List<Room> roomList = readAndWriteRoom.readFile();
         for (Room room : roomList) {

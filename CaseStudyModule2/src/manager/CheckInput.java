@@ -11,7 +11,7 @@ public class CheckInput {
             System.out.println("Nhập ID");
             id = input.nextLine();
             if (!id.matches(ID_REGEX)) {
-                System.err.println("mời nhập theo định dạng SVVL-XXXX (XXXX là ký tự số gồm 4 chũ số)");
+                System.err.println("Vui lòng nhập theo định dạng SVVL-XXXX (XXXX là ký tự số gồm 4 chũ số)");
             } else{
                 return id;
             }
@@ -25,7 +25,7 @@ public class CheckInput {
             System.out.println("Nhập ID");
             id = input.nextLine();
             if (!id.matches(ID_REGEX)){
-                System.err.println("mời nhập theo định dạng HOVL-XXXX (XXXX là ký tự số gồm 4 chũ số)");
+                System.err.println("Vui lòng nhập theo định dạng HOVL-XXXX (XXXX là ký tự số gồm 4 chũ số)");
             }else {
                 return id;
             }
@@ -39,7 +39,7 @@ public class CheckInput {
             System.out.println("Nhập ID");
             id = input.nextLine();
             if (!id.matches(ID_REGEX)){
-                System.err.println("mời nhập theo định dạng ROVL-XXXX (XXXX là ký tự số gồm 4 chũ số)");
+                System.err.println("Vui lòng nhập theo định dạng ROVL-XXXX (XXXX là ký tự số gồm 4 chũ số)");
             }else {
                 return id;
             }
@@ -48,7 +48,7 @@ public class CheckInput {
 
 
     public static String checkNameService(Scanner input) {
-        final String NAME_SERVICE_REGEX = "^[A-Z][a-z]+$";
+        final String NAME_SERVICE_REGEX = "^[A-Z][a-z 0-9]+$";
         String nameService;
         while (true) {
             System.out.println("Nhập tên dịch vụ :");
@@ -62,26 +62,37 @@ public class CheckInput {
     }
 
     public static String checkArea(Scanner input) {
-        final String AREA_REGEX = "^[3-9][1-9]+.?[0-9]+$";
         String area;
         while (true) {
             area = input.nextLine();
-            if (!area.matches(AREA_REGEX)){
-                System.err.println("Diện tích phải là số thực lớn hơn 30m2 - Ví dụ : 31.0");
+            if (Double.parseDouble(area) < 30){
+                System.err.println("Diện tích phải lớn hơn 30m2");
             }else {
                 return area;
             }
         }
     }
 
+    public static String checkRentalCost(Scanner input) {
+        String rentalCost;
+        while (true) {
+            System.out.println("Nhập giá cho thuê:");
+            rentalCost = input.nextLine();
+            if (Integer.parseInt(rentalCost) < 1) {
+                System.err.println("Giá cho thuê phải > 0");
+            }else {
+                return rentalCost;
+            }
+        }
+    }
+
     public static String checkMaxPeople(Scanner input) {
-        final String MAX_PEOPLE_REGEX = "^1[0-9]$";
         String maxPeople;
         while (true) {
             System.out.println("Nhập số lượng người tối đa :");
             maxPeople = input.nextLine();
-            if (!maxPeople.matches(MAX_PEOPLE_REGEX)) {
-                System.err.println("Số lượng người tối đa phải >0 và nhỏ hơn <20");
+            if (Integer.parseInt(maxPeople) < 1 || Integer.parseInt(maxPeople) > 20) {
+                System.err.println("Số lượng người tối đa phải > 0 và nhỏ hơn < 20");
             }else {
                 return maxPeople;
             }
@@ -103,16 +114,44 @@ public class CheckInput {
     }
 
     public static String checkNumberFloors(Scanner input) {
-        final String NUMBER_FLOORS_REGEX = "[1-9]";
         String numberFloors;
         while (true) {
-            System.out.println("Nhập dịch vụ miễn phí đi kèm :");
+            System.out.println("Nhập số tầng :");
             numberFloors = input.nextLine();
-            if (!numberFloors.matches(NUMBER_FLOORS_REGEX)) {
-                System.err.println("Dịch vụ đi kèm phải là các giá trị: massage, karaoke, food, drink, car");
+            if (Integer.parseInt(numberFloors) < 1) {
+                System.err.println("số tầng phải > 0");
             }else {
                 return numberFloors;
             }
         }
     }
+
+    public static String checkRentalType(Scanner input) {
+        final String RENTAL_TYPE_REGEX = "^[A-Z][a-z 0-9]+";
+        String rentalTyle;
+        while (true) {
+            System.out.println("Nhập vào kiểu thuê : ");
+            rentalTyle = input.nextLine();
+            if (!rentalTyle.matches(RENTAL_TYPE_REGEX)) {
+                System.err.println("Vui lòng viết hoa ký tự đầu tiên");
+            }else {
+                return rentalTyle;
+            }
+        }
+    }
+
+    public static String checkRoomStandard(Scanner input) {
+        final String ROOM_STANDARD_REGEX = "^[A-Z][a-z 0-9]+";
+        String roomStandard;
+        while (true) {
+            System.out.println("Nhập vào tiêu chuẩn phòng : ");
+            roomStandard = input.nextLine();
+            if (!roomStandard.matches(ROOM_STANDARD_REGEX)) {
+                System.err.println("Vui lòng viết hoa ký tự đầu tiên");
+            }else {
+                return roomStandard;
+            }
+        }
+    }
+
 }
