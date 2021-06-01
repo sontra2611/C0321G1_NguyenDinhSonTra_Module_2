@@ -11,12 +11,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ManagerService {
+//    public void checkIDVilla(String id) throws CheckInput {
+//
+//    }
     public void addVilla() {
         ReadAndWriteVilla readAndWriteVilla = new ReadAndWriteVilla();
         List<Villa> villaList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập ID :");
-        String id = scanner.nextLine();
+
+        String id = CheckInput.checkIDVilla(scanner);
+
         System.out.println("Nhập tên dịch vụ");
         String nameService = scanner.nextLine();
         System.out.println("Nhập diện tích sử dụng");
