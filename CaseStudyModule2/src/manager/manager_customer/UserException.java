@@ -15,7 +15,7 @@ public class UserException extends Exception {
     }
 
     public static void emailException(String email) throws UserException {
-        final String EMAIL_REGEX = "^[a-z][A-z a-z 0-9]+@[A-Z a-z]+\\.[a-z]+";
+        final String EMAIL_REGEX = "^[a-z][a-z 0-9]+@[A-Z a-z]{2}\\.[a-z]{2}";
         if (!email.matches(EMAIL_REGEX)){
             throw new UserException("Email phải đúng định dạng abc@abc.abc");
         }

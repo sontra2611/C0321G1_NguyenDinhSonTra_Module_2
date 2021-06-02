@@ -1,5 +1,6 @@
 package controllers;
 
+import manager.manager_customer.ManagerEmployee;
 import manager.manager_service.ManagerBooking;
 import manager.manager_customer.ManagerCustomers;
 import manager.manager_service.ManagerService;
@@ -41,6 +42,7 @@ public class Controllers {
                     managerBooking.addBooking();
                     break;
                 case 6:
+                    ManagerEmployee.showInforImployee();
                     break;
                 case 7:
                     check = false;
