@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteRoom {
-    public List<Room> readFile() {
+    public static List<Room> readFile() {
         List<Room> roomList = new ArrayList<>();
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
@@ -32,7 +32,7 @@ public class ReadAndWriteRoom {
         return roomList;
     }
 
-    public void writeFile(List<Room> roomList) {
+    public static void writeFile(List<Room> roomList) {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {

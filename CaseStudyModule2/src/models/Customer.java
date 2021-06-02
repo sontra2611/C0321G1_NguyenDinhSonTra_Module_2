@@ -9,12 +9,11 @@ public class Customer {
     private String email;
     private String customerType;
     private String address;
-    private String service;
 
     public Customer() {
     }
 
-    public Customer(String name, String birthday, String gender, String numberIDCard, String phoneNumbers, String email, String customerType, String address, String service) {
+    public Customer(String name, String birthday, String gender, String numberIDCard, String phoneNumbers, String email, String customerType, String address) {
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;
@@ -23,7 +22,6 @@ public class Customer {
         this.email = email;
         this.customerType = customerType;
         this.address = address;
-        this.service = service;
     }
 
     public String getName() {
@@ -90,12 +88,16 @@ public class Customer {
         this.address = address;
     }
 
-    public String getService() {
-        return service;
-    }
-
-    public void setService(String service) {
-        this.service = service;
+    @Override
+    public String toString() {
+        return  name +
+                "#"+ birthday +
+                "#" + gender +
+                "#" + numberIDCard +
+                "#" + phoneNumbers +
+                "#" + email +
+                "#" + customerType +
+                "#" + address;
     }
 
     public String showInfor() {
@@ -108,7 +110,6 @@ public class Customer {
                 ", Email : '" + email + '\'' +
                 ", Level : '" + customerType + '\'' +
                 ", Address : '" + address + '\'' +
-                ", Service : '" + service + '\'' +
                 '}';
     }
 }

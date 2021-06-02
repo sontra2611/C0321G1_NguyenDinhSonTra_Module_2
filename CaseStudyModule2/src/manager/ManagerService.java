@@ -17,29 +17,29 @@ public class ManagerService {
         List<Villa> villaList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
-        String id = CheckInput.checkIDVilla(scanner);
+        String id = CheckInputService.checkIDVilla(scanner);
 
-        String nameService = CheckInput.checkNameService(scanner);
+        String nameService = CheckInputService.checkNameService(scanner);
 
         System.out.println("Nhập diện tích sử dụng");
-        String area = CheckInput.checkArea(scanner);
+        String area = CheckInputService.checkArea(scanner);
 
 
-        String rentalCost = CheckInput.checkRentalCost(scanner);
+        String rentalCost = CheckInputService.checkRentalCost(scanner);
 
-        String maxPeople = CheckInput.checkMaxPeople(scanner);
+        String maxPeople = CheckInputService.checkMaxPeople(scanner);
 
-        String rentalType = CheckInput.checkRentalType(scanner);
+        String rentalType = CheckInputService.checkRentalType(scanner);
 
-        String roomStandard = CheckInput.checkRoomStandard(scanner);
+        String roomStandard = CheckInputService.checkRoomStandard(scanner);
 
         System.out.println("Nhập mô tả tiện nghi khác ");
         String otherAmenities = scanner.nextLine();
 
         System.out.println("Nhập diện tích hồ bơi : ");
-        String swimmingPoolArea = CheckInput.checkArea(scanner);
+        String swimmingPoolArea = CheckInputService.checkArea(scanner);
 
-        String numberFloors = CheckInput.checkNumberFloors(scanner);
+        String numberFloors = CheckInputService.checkNumberFloors(scanner);
 
         Villa villa = new Villa(id, nameService, area, rentalCost, maxPeople, rentalType, roomStandard, otherAmenities, swimmingPoolArea, numberFloors);
         villaList.add(villa);
@@ -51,24 +51,24 @@ public class ManagerService {
         List<House> houseList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
-        String id = CheckInput.checkIDHouse(scanner);
+        String id = CheckInputService.checkIDHouse(scanner);
 
-        String nameService = CheckInput.checkNameService(scanner);
+        String nameService = CheckInputService.checkNameService(scanner);
 
         String area = scanner.nextLine();
 
-        String rentalCost = CheckInput.checkRentalCost(scanner);
+        String rentalCost = CheckInputService.checkRentalCost(scanner);
 
-        String maxPeople = CheckInput.checkMaxPeople(scanner);
+        String maxPeople = CheckInputService.checkMaxPeople(scanner);
 
-        String rentalType = CheckInput.checkRentalType(scanner);
+        String rentalType = CheckInputService.checkRentalType(scanner);
 
-        String roomStandard = CheckInput.checkRoomStandard(scanner);
+        String roomStandard = CheckInputService.checkRoomStandard(scanner);
 
         System.out.println("Nhập mô tả tiện nghi khác ");
         String otherAmenities = scanner.nextLine();
 
-        String numberFloors = CheckInput.checkNumberFloors(scanner);
+        String numberFloors = CheckInputService.checkNumberFloors(scanner);
 
         House house = new House(id, nameService, area, rentalCost, maxPeople, rentalType, roomStandard, otherAmenities, numberFloors);
         houseList.add(house);
@@ -80,20 +80,20 @@ public class ManagerService {
         List<Room> roomList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
-        String id = CheckInput.checkIDRoom(scanner);
+        String id = CheckInputService.checkIDRoom(scanner);
 
-        String nameService = CheckInput.checkNameService(scanner);
+        String nameService = CheckInputService.checkNameService(scanner);
 
         System.out.println("Nhập diện tích sử dụng");
-        String area = CheckInput.checkArea(scanner);
+        String area = CheckInputService.checkArea(scanner);
 
-        String rentalCost = CheckInput.checkRentalCost(scanner);
+        String rentalCost = CheckInputService.checkRentalCost(scanner);
 
-        String maxPeople = CheckInput.checkMaxPeople(scanner);
+        String maxPeople = CheckInputService.checkMaxPeople(scanner);
 
-        String rentalType = CheckInput.checkRentalType(scanner);
+        String rentalType = CheckInputService.checkRentalType(scanner);
 
-        String freeService = CheckInput.checkFreeService(scanner);
+        String freeService = CheckInputService.checkFreeService(scanner);
 
         Room room = new Room(id, nameService, area, rentalCost, maxPeople, rentalType, freeService);
         roomList.add(room);

@@ -2,7 +2,7 @@ package manager;
 
 import java.util.Scanner;
 
-public class CheckInput {
+public class CheckInputService {
 
     public static String checkIDVilla(Scanner input) {
         final String ID_REGEX ="^SVVL-[0-9]{4}$";

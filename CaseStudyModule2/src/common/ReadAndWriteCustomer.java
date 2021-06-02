@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteCustomer {
-    public List<Customer> readFile() {
+    public static List<Customer> readFile() {
         List<Customer> customerList = new ArrayList<>();
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
@@ -16,7 +16,7 @@ public class ReadAndWriteCustomer {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] strings = line.split("#");
-                Customer customer = new Customer(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6],strings[7],strings[8]);
+                Customer customer = new Customer(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6],strings[7]);
                 customerList.add(customer);
             }
         } catch (Exception e) {
@@ -31,7 +31,7 @@ public class ReadAndWriteCustomer {
         return customerList;
     }
 
-    public void writeFile(List<Customer> customerList) {
+    public static void writeFile(List<Customer> customerList) {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {

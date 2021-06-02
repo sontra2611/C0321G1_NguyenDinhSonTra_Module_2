@@ -3,7 +3,7 @@ package manager;
 import java.util.Scanner;
 
 public class CheckInforCustomer {
-    public String checkName(){
+    public static String checkName(){
         System.out.println("Nhập họ và tên :");
         while (true){
             try {
@@ -12,12 +12,12 @@ public class CheckInforCustomer {
                 UserException.nameException(name);
                 return name;
             } catch (UserException e) {
-                e.getMessage();
+                System.err.println(e.getMessage());
             }
         }
     }
 
-    public String checkBirthday() {
+    public static String checkBirthday() {
         System.out.println("Nhập ngày tháng năm sinh :");
         while (true){
             try {
@@ -26,12 +26,12 @@ public class CheckInforCustomer {
                 UserException.birthdayException(birthday);
                 return birthday;
             } catch (UserException e) {
-                e.getMessage();
+                System.err.println(e.getMessage());
             }
         }
     }
 
-    public String checkGender() {
+    public static String checkGender() {
         System.out.println("Nhập giới tính :");
         while (true){
             try {
@@ -44,12 +44,12 @@ public class CheckInforCustomer {
                 }
                 return newGender;
             } catch (UserException e) {
-                e.getMessage();
+                System.err.println(e.getMessage());
             }
         }
     }
 
-    public String checkIDCard() {
+    public static String checkIDCard() {
         System.out.println("nhập số chứng minh nhân dân :");
         while (true) {
             try {
@@ -58,12 +58,12 @@ public class CheckInforCustomer {
                 UserException.idCardException(idCard);
                 return idCard;
             } catch (UserException e) {
-                e.printStackTrace();
+                System.err.println(e.getMessage());
             }
         }
     }
 
-    public String checkEmail() {
+    public static String checkEmail() {
         System.out.println("Nhập email :");
         while (true) {
             try {
@@ -72,7 +72,7 @@ public class CheckInforCustomer {
                 UserException.emailException(email);
                 return email;
             } catch (UserException e) {
-                e.printStackTrace();
+                System.err.println(e.getMessage());
             }
         }
     }

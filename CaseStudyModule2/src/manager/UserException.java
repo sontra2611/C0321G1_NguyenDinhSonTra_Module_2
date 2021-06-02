@@ -25,7 +25,7 @@ public class UserException extends Exception {
     }
 
     public static void genderException(String gender) throws UserException {
-        final String GENDER_REGEX = "([Uu][Nn][Kk][Nn][Oo][Ww])||([Mm][Aa][Ll][Ee])||([Ff][Aa][Mm][Aa][Ll][Ee])";
+        final String GENDER_REGEX = "([Uu][Nn][Kk][Nn][Oo][Ww][Nn]||[Mm][Aa][Ll][Ee]||[Ff][Aa][Mm][Aa][Ll][Ee])";
         if (!gender.matches(GENDER_REGEX)){
             throw new UserException("Vui lòng nhập lại");
         }
@@ -39,11 +39,16 @@ public class UserException extends Exception {
     }
 
     public static void birthdayException(String birthday) throws UserException {
-        final String BIRTHDAY_REGEX = "^[0-9]{2}/[0-9]{2}/[0-9]{4}$";
-        int yearOfBirth = Integer.parseInt(birthday.substring(6));
-        int currentYear = Year.now().getValue();
-        if (!birthday.matches(BIRTHDAY_REGEX) || yearOfBirth <= 1990 && (currentYear - yearOfBirth ) < 18){
-            throw new UserException("Năm sinh phải >1900 và nhỏ hơn năm hiện tại 18 năm, đúng định dạng dd/mm/yyyy");
+        final String BIRTHDAY_REGEX = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}$";
+        if (!birthday.matches(BIRTHDAY_REGEX)){
+            throw new UserException("Vui lòng nhập đúng định dạng dd/mm/yyyy");
+        }else {
+            int yearOfBirth = Integer.parseInt(birthday.substring(6));
+            int currentYear = Year.now().getValue();
+            if (yearOfBirth <= 1990 || (currentYear - yearOfBirth ) < 18){
+                throw new UserException("Năm sinh phải >1900 và nhỏ hơn năm hiện tại 18 năm");
+            }
         }
+
     }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteVilla {
-    public List<Villa> readFile() {
+    public static List<Villa> readFile() {
         List<Villa> villaList = new ArrayList<>();
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
@@ -32,7 +32,7 @@ public class ReadAndWriteVilla {
         return villaList;
     }
 
-    public void writeFile(List<Villa> villaList) {
+    public static void writeFile(List<Villa> villaList) {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {

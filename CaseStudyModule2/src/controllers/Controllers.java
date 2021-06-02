@@ -1,11 +1,15 @@
 package controllers;
 
+import manager.ManagerBooking;
+import manager.ManagerCustomers;
 import manager.ManagerService;
 
 import java.util.Scanner;
 
 public class Controllers {
     ManagerService managerService = new ManagerService();
+    ManagerCustomers managerCustomers = new ManagerCustomers();
+    ManagerBooking managerBooking = new ManagerBooking();
     public void displayMainMenu() {
         boolean check = true;
         do {
@@ -15,7 +19,7 @@ public class Controllers {
                     "2.Show Services\n" +
                     "3.Add New Customer\n" +
                     "4.Show Information of Customer\n" +
-                    "5.New Booking\n" +
+                    "5.Add New Booking\n" +
                     "6.Show Information of Employee\n" +
                     "7.Exit");
             int choice = scanner.nextInt();
@@ -28,12 +32,13 @@ public class Controllers {
                     showService();
                     break;
                 case 3:
-                    //add customer
+                    managerCustomers.addCustomer();
                     break;
                 case 4:
-                    //Show info Customer
+                    managerCustomers.showInforCustomer();
                     break;
                 case 5:
+                    managerBooking.addBooking();
                     break;
                 case 6:
                     break;
