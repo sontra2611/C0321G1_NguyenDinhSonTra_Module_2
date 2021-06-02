@@ -14,7 +14,7 @@ import java.util.Scanner;
 import java.util.TreeSet;
 
 public class ManagerService {
-    public void addVilla() {
+    public static void addVilla() {
         ReadAndWriteVilla readAndWriteVilla = new ReadAndWriteVilla();
         List<Villa> villaList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
@@ -48,7 +48,7 @@ public class ManagerService {
         readAndWriteVilla.writeFile(villaList);
     }
 
-    public void addHouse() {
+    public static void addHouse() {
         ReadAndWriteHouse readAndWriteHouse = new ReadAndWriteHouse();
         List<House> houseList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
@@ -77,7 +77,7 @@ public class ManagerService {
         readAndWriteHouse.writeFile(houseList);
     }
 
-    public void addRoom() {
+    public static void addRoom() {
         ReadAndWriteRoom readAndWriteRoom = new ReadAndWriteRoom();
         List<Room> roomList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
@@ -103,7 +103,7 @@ public class ManagerService {
     }
 
 
-    public void showAllVilla() {
+    public static void showAllVilla() {
         ReadAndWriteVilla readAndWriteVilla = new ReadAndWriteVilla();
         List<Villa> villaList = readAndWriteVilla.readFile();
         for (Villa villa : villaList) {
@@ -111,7 +111,7 @@ public class ManagerService {
         }
     }
 
-    public void showAllHouse() {
+    public static void showAllHouse() {
         ReadAndWriteHouse readAndWriteHouse = new ReadAndWriteHouse();
         List<House> houseList = readAndWriteHouse.readFile();
         for (House house : houseList) {
@@ -119,7 +119,7 @@ public class ManagerService {
         }
     }
 
-    public void showAllRoom() {
+    public static void showAllRoom() {
         ReadAndWriteRoom readAndWriteRoom = new ReadAndWriteRoom();
         List<Room> roomList = readAndWriteRoom.readFile();
         for (Room room : roomList) {
@@ -127,7 +127,7 @@ public class ManagerService {
         }
     }
 
-    public void showVillaNotDuplicate() {
+    public static void showVillaNotDuplicate() {
         List<Villa> villaList = ReadAndWriteVilla.readFile();
         TreeSet<String> treeSet = new TreeSet<>();
         for (Villa villa : villaList) {
@@ -137,7 +137,7 @@ public class ManagerService {
         }
     }
 
-    public void showHouseNotDuplicate() {
+    public static void showHouseNotDuplicate() {
         List<House> houseList = ReadAndWriteHouse.readFile();
         TreeSet<String> treeSet = new TreeSet<>();
         for (House house : houseList) {
@@ -147,7 +147,7 @@ public class ManagerService {
         }
     }
 
-    public void showRoomNotDuplicate() {
+    public static void showRoomNotDuplicate() {
         List<Room> roomList = ReadAndWriteRoom.readFile();
         TreeSet<String> treeSet = new TreeSet<>();
         for (Room room : roomList) {

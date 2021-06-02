@@ -8,10 +8,9 @@ import manager.manager_service.ManagerService;
 import java.util.Scanner;
 
 public class Controllers {
-    ManagerService managerService = new ManagerService();
-    ManagerCustomers managerCustomers = new ManagerCustomers();
-    ManagerBooking managerBooking = new ManagerBooking();
-    public void displayMainMenu() {
+    public static void displayMainMenu() {
+        ManagerCustomers managerCustomers = new ManagerCustomers();
+        ManagerBooking managerBooking = new ManagerBooking();
         boolean check = true;
         do {
             Scanner scanner = new Scanner(System.in);
@@ -53,7 +52,7 @@ public class Controllers {
         } while (check);
     }
 
-    public void addService() {
+    public static void addService() {
         boolean check = true;
         do {
             Scanner scanner = new Scanner(System.in);
@@ -66,13 +65,13 @@ public class Controllers {
 
             switch (choice) {
                 case 1:
-                    managerService.addVilla();
+                    ManagerService.addVilla();
                     break;
                 case 2:
-                    managerService.addHouse();
+                    ManagerService.addHouse();
                     break;
                 case 3:
-                    managerService.addRoom();
+                    ManagerService.addRoom();
                     break;
                 case 4:
                     check = false;
@@ -83,7 +82,7 @@ public class Controllers {
         } while (check);
     }
 
-    public void showService(){
+    public static void showService() {
         boolean check = true;
         do {
             Scanner scanner = new Scanner(System.in);
@@ -99,22 +98,22 @@ public class Controllers {
 
             switch (choice) {
                 case 1:
-                    managerService.showAllVilla();
+                    ManagerService.showAllVilla();
                     break;
                 case 2:
-                    managerService.showAllHouse();
+                    ManagerService.showAllHouse();
                     break;
                 case 3:
-                    managerService.showAllRoom();
+                    ManagerService.showAllRoom();
                     break;
                 case 4:
-                    managerService.showVillaNotDuplicate();
+                    ManagerService.showVillaNotDuplicate();
                     break;
                 case 5:
-                    managerService.showHouseNotDuplicate();
+                    ManagerService.showHouseNotDuplicate();
                     break;
                 case 6:
-                    managerService.showRoomNotDuplicate();
+                    ManagerService.showRoomNotDuplicate();
                     break;
                 case 7:
                     check = false;
@@ -123,10 +122,5 @@ public class Controllers {
                     System.out.println("No choice");
             }
         } while (check);
-    }
-
-    public static void main(String[] args) {
-        Controllers controllers = new Controllers();
-        controllers.displayMainMenu();
     }
 }

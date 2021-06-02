@@ -1,5 +1,7 @@
 package manager.manager_customer;
 
+import manager.exception.CustomerException;
+
 import java.util.Scanner;
 
 public class CheckInforCustomer {
@@ -9,9 +11,9 @@ public class CheckInforCustomer {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String name = scanner.nextLine();
-                UserException.nameException(name);
+                ValidateCustomer.nameException(name);
                 return name;
-            } catch (UserException e) {
+            } catch (CustomerException e) {
                 System.err.println(e.getMessage());
             }
         }
@@ -23,9 +25,9 @@ public class CheckInforCustomer {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String birthday = scanner.nextLine();
-                UserException.birthdayException(birthday);
+                ValidateCustomer.birthdayException(birthday);
                 return birthday;
-            } catch (UserException e) {
+            } catch (CustomerException e) {
                 System.err.println(e.getMessage());
             }
         }
@@ -37,13 +39,13 @@ public class CheckInforCustomer {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String gender = scanner.nextLine();
-                UserException.genderException(gender);
+                ValidateCustomer.genderException(gender);
                 String newGender = gender.valueOf(gender.charAt(0)).toUpperCase();
                 for (int i = 1; i < gender.length(); i++){
                     newGender += gender.valueOf(gender.charAt(i)).toLowerCase();
                 }
                 return newGender;
-            } catch (UserException e) {
+            } catch (CustomerException e) {
                 System.err.println(e.getMessage());
             }
         }
@@ -55,9 +57,9 @@ public class CheckInforCustomer {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String idCard = scanner.nextLine();
-                UserException.idCardException(idCard);
+                ValidateCustomer.idCardException(idCard);
                 return idCard;
-            } catch (UserException e) {
+            } catch (CustomerException e) {
                 System.err.println(e.getMessage());
             }
         }
@@ -69,9 +71,9 @@ public class CheckInforCustomer {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String email = scanner.nextLine();
-                UserException.emailException(email);
+                ValidateCustomer.emailException(email);
                 return email;
-            } catch (UserException e) {
+            } catch (CustomerException e) {
                 System.err.println(e.getMessage());
             }
         }
