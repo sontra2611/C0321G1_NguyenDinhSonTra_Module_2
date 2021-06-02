@@ -1,8 +1,8 @@
 package controllers;
 
-import manager.ManagerBooking;
-import manager.ManagerCustomers;
-import manager.ManagerService;
+import manager.manager_service.ManagerBooking;
+import manager.manager_customer.ManagerCustomers;
+import manager.manager_service.ManagerService;
 
 import java.util.Scanner;
 
@@ -97,19 +97,22 @@ public class Controllers {
 
             switch (choice) {
                 case 1:
-                    managerService.displayAllVilla();
+                    managerService.showAllVilla();
                     break;
                 case 2:
-                    managerService.displayAllHouse();
+                    managerService.showAllHouse();
                     break;
                 case 3:
-                    managerService.displayAllRoom();
+                    managerService.showAllRoom();
                     break;
                 case 4:
+                    managerService.showVillaNotDuplicate();
                     break;
                 case 5:
+                    managerService.showHouseNotDuplicate();
                     break;
                 case 6:
+                    managerService.showRoomNotDuplicate();
                     break;
                 case 7:
                     check = false;

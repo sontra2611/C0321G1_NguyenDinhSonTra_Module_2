@@ -1,8 +1,5 @@
-package manager;
+package manager.manager_customer;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-
-import java.lang.reflect.GenericArrayType;
 import java.time.Year;
 
 public class UserException extends Exception {
@@ -18,7 +15,7 @@ public class UserException extends Exception {
     }
 
     public static void emailException(String email) throws UserException {
-        final String EMAIL_REGEX = "^[A-Z a-z][A-z a-z 0-9]+\\@[A-Z a-z]+\\.[a-z]+";
+        final String EMAIL_REGEX = "^[a-z][A-z a-z 0-9]+@[A-Z a-z]+\\.[a-z]+";
         if (!email.matches(EMAIL_REGEX)){
             throw new UserException("Email phải đúng định dạng abc@abc.abc");
         }

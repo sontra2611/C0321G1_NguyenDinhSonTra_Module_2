@@ -1,8 +1,9 @@
-package manager;
+package manager.manager_service;
 
 import common.ReadAndWriteHouse;
 import common.ReadAndWriteRoom;
 import common.ReadAndWriteVilla;
+import manager.manager_service.CheckInputService;
 import models.House;
 import models.Room;
 import models.Villa;
@@ -10,6 +11,7 @@ import models.Villa;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class ManagerService {
     public void addVilla() {
@@ -101,7 +103,7 @@ public class ManagerService {
     }
 
 
-    public void displayAllVilla() {
+    public void showAllVilla() {
         ReadAndWriteVilla readAndWriteVilla = new ReadAndWriteVilla();
         List<Villa> villaList = readAndWriteVilla.readFile();
         for (Villa villa : villaList) {
@@ -109,7 +111,7 @@ public class ManagerService {
         }
     }
 
-    public void displayAllHouse() {
+    public void showAllHouse() {
         ReadAndWriteHouse readAndWriteHouse = new ReadAndWriteHouse();
         List<House> houseList = readAndWriteHouse.readFile();
         for (House house : houseList) {
@@ -117,11 +119,41 @@ public class ManagerService {
         }
     }
 
-    public void displayAllRoom() {
+    public void showAllRoom() {
         ReadAndWriteRoom readAndWriteRoom = new ReadAndWriteRoom();
         List<Room> roomList = readAndWriteRoom.readFile();
         for (Room room : roomList) {
             System.out.println(room.showInfor());
+        }
+    }
+
+    public void showVillaNotDuplicate() {
+        List<Villa> villaList = ReadAndWriteVilla.readFile();
+        TreeSet<String> treeSet = new TreeSet<>();
+        for (Villa villa : villaList) {
+            if (treeSet.add(villa.getServiceName())) {
+                System.out.println(villa.showInfor());
+            }
+        }
+    }
+
+    public void showHouseNotDuplicate() {
+        List<House> houseList = ReadAndWriteHouse.readFile();
+        TreeSet<String> treeSet = new TreeSet<>();
+        for (House house : houseList) {
+            if (treeSet.add(house.getServiceName())) {
+                System.out.println(house.showInfor());
+            }
+        }
+    }
+
+    public void showRoomNotDuplicate() {
+        List<Room> roomList = ReadAndWriteRoom.readFile();
+        TreeSet<String> treeSet = new TreeSet<>();
+        for (Room room : roomList) {
+            if (treeSet.add(room.getServiceName())) {
+                System.out.println(room.showInfor());
+            }
         }
     }
 }

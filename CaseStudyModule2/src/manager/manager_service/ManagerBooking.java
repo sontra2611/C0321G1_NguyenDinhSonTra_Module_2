@@ -1,4 +1,4 @@
-package manager;
+package manager.manager_service;
 
 import common.*;
 import models.Customer;
@@ -62,7 +62,7 @@ public class ManagerBooking {
     }
 
     private void bookingVilla(ManagerService managerService, Scanner scanner) {
-        managerService.displayAllVilla();
+        managerService.showAllVilla();
         List<Villa> villaList = ReadAndWriteVilla.readFile();
         while (true) {
             System.out.println("Nhập id villa:");
@@ -80,7 +80,7 @@ public class ManagerBooking {
     }
 
     private void bookingHouse(ManagerService managerService, Scanner scanner) {
-        managerService.displayAllHouse();
+        managerService.showAllHouse();
         List<House> houseList = ReadAndWriteHouse.readFile();
         while (true) {
             System.out.println("Nhập id House:");
@@ -98,7 +98,7 @@ public class ManagerBooking {
     }
 
     private void bookingRoom(ManagerService managerService, Scanner scanner) {
-        managerService.displayAllRoom();
+        managerService.showAllRoom();
         List<Room> roomList = ReadAndWriteRoom.readFile();
         while (true) {
             System.out.println("Nhập id Room:");

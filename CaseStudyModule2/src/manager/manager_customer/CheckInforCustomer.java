@@ -1,4 +1,4 @@
-package manager;
+package manager.manager_customer;
 
 import java.util.Scanner;
 
