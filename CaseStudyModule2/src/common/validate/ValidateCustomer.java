@@ -17,7 +17,7 @@ public class ValidateCustomer {
     }
 
     public static void emailException(String email) throws CustomerException {
-        final String EMAIL_REGEX = "^[a-z][a-z 0-9]+@[A-Z a-z]{2}\\.[a-z]{2}";
+        final String EMAIL_REGEX = "^[a-z][a-z 0-9]+\\@[A-Z a-z]{2,}\\.[a-z]{2,}";
         if (!email.matches(EMAIL_REGEX)) {
             throw new CustomerException("Email phải đúng định dạng abc@abc.abc");
         }
