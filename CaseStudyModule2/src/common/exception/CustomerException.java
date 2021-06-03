@@ -1,4 +1,4 @@
-package manager.exception;
+package common.exception;
 
 public class CustomerException extends Exception {
     public CustomerException(String message) {

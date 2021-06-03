@@ -1,6 +1,7 @@
 package manager.manager_customer;
 
-import manager.exception.CustomerException;
+import common.exception.CustomerException;
+import common.validate.ValidateCustomer;
 
 import java.util.Scanner;
 
