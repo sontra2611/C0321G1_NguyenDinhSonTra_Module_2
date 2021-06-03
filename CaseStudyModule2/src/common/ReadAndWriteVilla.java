@@ -22,10 +22,10 @@ public class ReadAndWriteVilla {
             }
         } catch (Exception e) {
             e.getStackTrace();
-        }finally {
-            try{
+        } finally {
+            try {
                 bufferedReader.close();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -36,7 +36,7 @@ public class ReadAndWriteVilla {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter("D:\\C0321G1_NguyenDinhSonTra_Module_2\\CaseStudyModule2\\src\\data\\villa.csv",true);
+            fileWriter = new FileWriter("D:\\C0321G1_NguyenDinhSonTra_Module_2\\CaseStudyModule2\\src\\data\\villa.csv", true);
             bufferedWriter = new BufferedWriter(fileWriter);
             for (Villa villa : villaList) {
                 bufferedWriter.write(villa.toString());
@@ -47,7 +47,7 @@ public class ReadAndWriteVilla {
         } finally {
             try {
                 bufferedWriter.close();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

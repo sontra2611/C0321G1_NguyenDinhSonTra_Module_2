@@ -90,8 +90,8 @@ public class Customer {
 
     @Override
     public String toString() {
-        return  name +
-                "#"+ birthday +
+        return name +
+                "#" + birthday +
                 "#" + gender +
                 "#" + numberIDCard +
                 "#" + phoneNumbers +

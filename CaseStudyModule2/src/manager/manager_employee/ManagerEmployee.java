@@ -1,4 +1,4 @@
-package manager.manager_customer;
+package manager.manager_employee;
 
 import common.ReadEmployee;
 import models.Employee;
@@ -6,14 +6,13 @@ import models.Employee;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class ManagerEmployee {
     public static void showInforImployee(){
         List<Employee> employeeList = ReadEmployee.readFile();
         Map<String, Employee> map = new LinkedHashMap<>();
-        for (int i = 0; i < employeeList.size(); i++){
-            map.put("00"+(i+1) , employeeList.get(i));
+        for (int i = 0; i < employeeList.size(); i++) {
+            map.put(employeeList.get(i).getId(), employeeList.get(i));
         }
 
         for (Map.Entry<String, Employee> entry : map.entrySet()) {

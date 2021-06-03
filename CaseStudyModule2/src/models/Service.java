@@ -68,18 +68,18 @@ public abstract class Service {
         this.rentalType = rentalType;
     }
 
-    public String toString(){
-        return  id+
-                "#"+ serviceName +
+    public String toString() {
+        return id +
+                "#" + serviceName +
                 "#" + area +
                 "#" + rentalCost +
                 "#" + maxPeople +
-                "#" + rentalType ;
+                "#" + rentalType;
     }
 
     public String showInfor() {
         return
-                " Id = '" + id  +
+                " Id = '" + id +
                         ", Tên Dịch vụ = '" + serviceName + '\'' +
                         ", Diện tích sử dụng = '" + area + '\'' +
                         ", Chi Phí Thuê = '" + rentalCost + '\'' +

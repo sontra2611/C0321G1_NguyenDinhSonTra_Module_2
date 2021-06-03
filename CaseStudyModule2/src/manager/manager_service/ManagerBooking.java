@@ -5,10 +5,13 @@ import models.Customer;
 import models.House;
 import models.Room;
 import models.Villa;
+
 import java.util.List;
 import java.util.Scanner;
 
 public class ManagerBooking {
+    String string = "";
+
     public void addBooking() {
         ManagerService managerService = new ManagerService();
 
@@ -34,7 +37,7 @@ public class ManagerBooking {
                 System.out.println("Thông tin khách hàng :");
                 System.out.println(customerList.get(choice - 1).showInfor());
                 System.out.println("---------------");
-                WriteBooking.writeFile(customerList.get(choice - 1).getName());
+                string += customerList.get(choice - 1).getName() + ",";
                 check = false;
             }
         } while (check);
@@ -71,7 +74,9 @@ public class ManagerBooking {
                 if (id.equals(villaList.get(i).getId())) {
                     System.out.println("Dịch vụ Villa bạn đã chọn là :");
                     System.out.println(villaList.get(i).showInfor());
-                    WriteBooking.writeFile(villaList.get(i).getId());
+                    string += villaList.get(i).getId();
+                    WriteBooking.writeFile(string);
+                    string = "";
                     return;
                 }
             }
@@ -89,7 +94,9 @@ public class ManagerBooking {
                 if (id.equals(houseList.get(i).getId())) {
                     System.out.println("Dịch vụ House bạn đã chọn là :");
                     System.out.println(houseList.get(i).showInfor());
-                    WriteBooking.writeFile(houseList.get(i).getId());
+                    string += houseList.get(i).getId();
+                    WriteBooking.writeFile(string);
+                    string = "";
                     return;
                 }
             }
@@ -107,7 +114,9 @@ public class ManagerBooking {
                 if (id.equals(roomList.get(i).getId())) {
                     System.out.println("Dịch vụ Room bạn đã chọn là :");
                     System.out.println(roomList.get(i).showInfor());
-                    WriteBooking.writeFile(roomList.get(i).getId());
+                    string += roomList.get(i).getId();
+                    WriteBooking.writeFile(string);
+                    string = "";
                     return;
                 }
             }

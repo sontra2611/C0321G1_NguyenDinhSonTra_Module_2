@@ -1,6 +1,7 @@
 package common;
 
 import models.Customer;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,15 @@ public class ReadAndWriteCustomer {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] strings = line.split("#");
-                Customer customer = new Customer(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6],strings[7]);
+                Customer customer = new Customer(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6], strings[7]);
                 customerList.add(customer);
             }
         } catch (Exception e) {
             e.getStackTrace();
-        }finally {
-            try{
+        } finally {
+            try {
                 bufferedReader.close();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -46,7 +47,7 @@ public class ReadAndWriteCustomer {
         } finally {
             try {
                 bufferedWriter.close();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

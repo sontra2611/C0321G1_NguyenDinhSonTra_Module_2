@@ -5,9 +5,9 @@ import manager.exception.CustomerException;
 import java.util.Scanner;
 
 public class CheckInforCustomer {
-    public static String checkName(){
+    public static String checkName() {
         System.out.println("Nhập họ và tên :");
-        while (true){
+        while (true) {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String name = scanner.nextLine();
@@ -21,7 +21,7 @@ public class CheckInforCustomer {
 
     public static String checkBirthday() {
         System.out.println("Nhập ngày tháng năm sinh :");
-        while (true){
+        while (true) {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String birthday = scanner.nextLine();
@@ -35,13 +35,13 @@ public class CheckInforCustomer {
 
     public static String checkGender() {
         System.out.println("Nhập giới tính :");
-        while (true){
+        while (true) {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String gender = scanner.nextLine();
                 ValidateCustomer.genderException(gender);
                 String newGender = gender.valueOf(gender.charAt(0)).toUpperCase();
-                for (int i = 1; i < gender.length(); i++){
+                for (int i = 1; i < gender.length(); i++) {
                     newGender += gender.valueOf(gender.charAt(i)).toLowerCase();
                 }
                 return newGender;

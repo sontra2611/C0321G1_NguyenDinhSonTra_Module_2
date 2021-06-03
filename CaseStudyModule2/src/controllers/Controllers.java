@@ -1,9 +1,10 @@
 package controllers;
 
-import manager.manager_customer.ManagerEmployee;
+import manager.manager_employee.ManagerEmployee;
 import manager.manager_service.ManagerBooking;
 import manager.manager_customer.ManagerCustomers;
 import manager.manager_service.ManagerService;
+import models.Cabinet;
 
 import java.util.Scanner;
 
@@ -21,7 +22,8 @@ public class Controllers {
                     "4.Show Information of Customer\n" +
                     "5.Add New Booking\n" +
                     "6.Show Information of Employee\n" +
-                    "7.Exit");
+                    "7.Search employee\n" +
+                    "8.Exit");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -44,6 +46,9 @@ public class Controllers {
                     ManagerEmployee.showInforImployee();
                     break;
                 case 7:
+                    Cabinet.findFileOfEmployee();
+                    break;
+                case 8:
                     check = false;
                     break;
                 default:

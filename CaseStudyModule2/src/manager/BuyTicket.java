@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class BuyTicket {
     static int count = 10;
     static Queue<String> queue = new LinkedList<>();
+
     public static void buyTicket() {
         List<Customer> customerList = ReadAndWriteCustomer.readFile();
         String string = "";
@@ -53,14 +54,14 @@ public class BuyTicket {
                 int option = Integer.parseInt(scanner.nextLine());
                 if (option != 1) {
                     string = "";
-                    ControllersBuyTicket.displayMainMenu();
+                    break;
                 }
             } else {
                 System.out.println("Bạn đã mua thành công " + buyTicket + "vé");
                 string += " đã mua " + buyTicket + " vé";
                 count -= buyTicket;
                 queue.add(string);
-                ControllersBuyTicket.displayMainMenu();
+                break;
             }
         }
     }

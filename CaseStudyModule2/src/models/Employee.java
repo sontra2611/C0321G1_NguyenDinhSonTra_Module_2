@@ -1,6 +1,7 @@
 package models;
 
 public class Employee {
+    private String id;
     private String name;
     private String age;
     private String address;
@@ -8,7 +9,16 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String name, String age, String address) {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Employee(String id, String name, String age, String address) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.address = address;

@@ -17,15 +17,15 @@ public class ReadAndWriteHouse {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] strings = line.split("#");
-                House house = new House(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6],strings[7],strings[8]);
+                House house = new House(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6], strings[7], strings[8]);
                 houseList.add(house);
             }
         } catch (Exception e) {
             e.getStackTrace();
-        }finally {
-            try{
+        } finally {
+            try {
                 bufferedReader.close();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -47,7 +47,7 @@ public class ReadAndWriteHouse {
         } finally {
             try {
                 bufferedWriter.close();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

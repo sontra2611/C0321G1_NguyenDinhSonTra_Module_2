@@ -2,13 +2,14 @@ package manager.manager_customer;
 
 import common.ReadAndWriteCustomer;
 import models.Customer;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class ManagerCustomers {
-    public void addCustomer(){
+    public void addCustomer() {
         ReadAndWriteCustomer readAndWriteCustomer = new ReadAndWriteCustomer();
         List<Customer> customerList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
@@ -32,12 +33,12 @@ public class ManagerCustomers {
         System.out.println("Nhập địa chỉ : ");
         String address = scanner.nextLine();
 
-        Customer customer = new Customer(name, birthday, gender, idCard, phoneNumer, email,typeCustomer, address);
+        Customer customer = new Customer(name, birthday, gender, idCard, phoneNumer, email, typeCustomer, address);
         customerList.add(customer);
         readAndWriteCustomer.writeFile(customerList);
     }
 
-    public void showInforCustomer(){
+    public void showInforCustomer() {
         ReadAndWriteCustomer readAndWriteCustomer = new ReadAndWriteCustomer();
         List<Customer> customerList = readAndWriteCustomer.readFile();
         Collections.sort(customerList, new sortByName());

@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class ControllersBuyTicket {
     public static void displayMainMenu() {
-        boolean check = true;
-        do {
+        while (true){
             Scanner scanner = new Scanner(System.in);
             System.out.println("Menu : ");
             System.out.println("1.BuyTicker\n" +
@@ -23,15 +22,11 @@ public class ControllersBuyTicket {
                     BuyTicket.showCustomerBuyTicket();
                     break;
                 case 3:
-                    check = false;
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("No choice");
             }
-        } while (check);
-    }
-
-    public static void main(String[] args) {
-        displayMainMenu();
+        }
     }
 }

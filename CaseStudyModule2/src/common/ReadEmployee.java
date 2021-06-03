@@ -1,6 +1,7 @@
 package common;
 
 import models.Employee;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,15 +19,15 @@ public class ReadEmployee {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] strings = line.split(",");
-                Employee employee = new Employee(strings[0], strings[1], strings[2]);
+                Employee employee = new Employee(strings[0], strings[1], strings[2], strings[3]);
                 employeeList.add(employee);
             }
         } catch (Exception e) {
             e.getStackTrace();
-        }finally {
-            try{
+        } finally {
+            try {
                 bufferedReader.close();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
