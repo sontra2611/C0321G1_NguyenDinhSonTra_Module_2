@@ -57,7 +57,8 @@ public class ManagerService {
 
         String nameService = CheckInputService.checkNameService(scanner);
 
-        String area = scanner.nextLine();
+        System.out.println("Nhập diện tích sử dụng :");
+        String area = CheckInputService.checkArea(scanner);
 
         String rentalCost = CheckInputService.checkRentalCost(scanner);
 

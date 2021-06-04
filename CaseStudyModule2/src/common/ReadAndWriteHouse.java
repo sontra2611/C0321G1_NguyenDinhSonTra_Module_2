@@ -36,7 +36,7 @@ public class ReadAndWriteHouse {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter("D:\\C0321G1_NguyenDinhSonTra_Module_2\\CaseStudyModule2\\src\\data\\room.csv", true);
+            fileWriter = new FileWriter("D:\\C0321G1_NguyenDinhSonTra_Module_2\\CaseStudyModule2\\src\\data\\house.csv", true);
             bufferedWriter = new BufferedWriter(fileWriter);
             for (House house : houseList) {
                 bufferedWriter.write(house.toString());
